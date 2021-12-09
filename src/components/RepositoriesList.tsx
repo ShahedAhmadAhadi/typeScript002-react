@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useActions } from '../hooks/useActions';
+import { useTypeSelector } from '../hooks/useTypedSelector';
 
 const RepositoriesList: React.FC = () => {
     const [term, setTerm] = useState('');
     const { searchRepositories } = useActions();
+    const {data, loading, error} = useTypeSelector((state) => state.repositories)
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         searchRepositories(term);

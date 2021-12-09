@@ -19,7 +19,7 @@ export const searchRepositories = (term: string) => {
                 payload: names
             })
 
-        } catch (error) {
+        } catch (error: any) {
             dispatch({
                 type: ActionType.SEARCH_REPOSITORIES_ERROR,
                 payload: error.message

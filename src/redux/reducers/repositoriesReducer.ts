@@ -8,7 +8,7 @@ interface RepositoriesState {
 }
 
 const initialState = {
-    laoding: false,
+    loading: false,
     error: null,
     data: []
 }
